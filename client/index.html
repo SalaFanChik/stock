@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Data Visualization</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Stock Data Visualization</h1>
+        <form id="dataForm">
+            <label for="start">Start Date:</label>
+            <input type="date" id="start" name="start" required>
+
+            <label for="end">End Date:</label>
+            <input type="date" id="end" name="end" required>
+
+            <label for="fields">Fields (comma separated):</label>
+            <input type="text" id="fields" name="fields" value="Open,High,Close,Volume" placeholder="e.g., Open,Close,Volume" required>
+
+            <button type="submit">Fetch Data</button>
+        </form>
+
+        <canvas id="priceChart" width="800" height="400"></canvas>
+        <canvas id="volumeChart" width="800" height="400"></canvas>
+
+        <div id="stats">
+            <h2>Statistics</h2>
+            <p id="maxValue"></p>
+            <p id="minValue"></p>
+            <p id="avgValue"></p>
+            <p id="stdDevValue"></p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
