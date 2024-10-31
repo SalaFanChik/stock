@@ -16,9 +16,14 @@
             <label for="end">End Date:</label>
             <input type="date" id="end" name="end" required>
 
-            <label for="fields">Fields (comma separated):</label>
-            <input type="text" id="fields" name="fields" value="Open,High,Close,Volume" placeholder="e.g., Open,Close,Volume" required>
-
+            <label>Fields:</label>
+            <div>
+                <label><input type="checkbox" name="fields" value="Open"> Open</label>
+                <label><input type="checkbox" name="fields" value="High"> High</label>
+                <label><input type="checkbox" name="fields" value="Close"> Close</label>
+                <label><input type="checkbox" name="fields" value="Low"> Low</label>
+                <label><input type="checkbox" name="fields" value="Volume"> Volume</label>
+            </div>
             <button type="submit">Fetch Data</button>
         </form>
 

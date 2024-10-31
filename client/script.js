@@ -3,7 +3,9 @@ document.getElementById('dataForm').addEventListener('submit', async (event) => 
 
     const start = document.getElementById('start').value;
     const end = document.getElementById('end').value;
-    const fields = document.getElementById('fields').value;
+    const fields = Array.from(document.querySelectorAll('input[name="fields"]:checked'))
+    .map(checkbox => checkbox.value)
+    .join(',');
 
     // Fetch data from the API
     const response = await fetch(`http://localhost:3000/api/stocks/multiple?start=${start}&end=${end}&fields=${fields}`);
